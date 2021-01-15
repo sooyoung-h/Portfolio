@@ -132,6 +132,14 @@ ul {
   background-color: rgba(194, 194, 194, 0.226);
 }
 
+.navbar__toogleBtn {
+  position: absolute;
+  top: 17px;
+  right: 32px;
+  font-size: 25px;
+  display: none;
+}
+
 /* home */
 #home {
   background: url("images/back.png") center/cover no-repeat;
@@ -221,12 +229,17 @@ ul {
 /* Skills */
 #skills {
   background-color: rgba(240, 230, 140, 0.363);
-  margin: 0 auto;
-  max-width: 1200px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .skillset {
+  margin: auto;
+  width: 80%;
+  max-width: 1200px;
   display: flex;
+  margin-top: 20px;
   flex-direction: row;
   background-color: var(--color-light-grey);
 }
@@ -285,8 +298,11 @@ ul {
 }
 
 /* Work */
+#work {
+  padding: 20px 5px;
+}
 .work__categories {
-  margin: 40px;
+  margin: 20px 0;
 }
 .category__btn {
   border: 1px solid var(--color-dark-white);
@@ -334,7 +350,7 @@ ul {
   width: 280px;
   height: 250px;
   margin: 2px;
-  background-color: rgb(102, 102, 102);
+  background-color: rgb(233, 233, 233);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -366,11 +382,14 @@ ul {
 /* testmonial */
 #testimonials {
   background-color: rgb(211, 211, 211);
-  max-width: 1200px;
 }
 
 .testimonials {
-  margin: 40px;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .testmonial {
   display: flex;
@@ -412,4 +431,39 @@ ul {
 }
 .contact__email {
   margin: 5px 0;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar__toogleBtn {
+    display: block;
+  }
+  #navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .navbar__menu {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    display: none;
+  }
+  .about__major {
+    flex-direction: column;
+    margin: 40px 0;
+  }
+  .major {
+    margin-bottom: 40px;
+  }
+  .skillset {
+    margin-top: 20px;
+    flex-direction: column;
+  }
+  .project {
+    flex-grow: 1;
+  }
+  .testmonial img {
+    margin-top: 30px;
+    width: 90px;
+    height: 90px;
+  }
 }
