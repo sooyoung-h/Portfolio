@@ -94,7 +94,7 @@ ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #dfdfdfaf;
+  background-color: #ecccc8;
   padding: 0px;
 }
 
@@ -393,4 +393,23 @@ ul {
 }
 .name {
   margin-top: 15px;
+}
+
+/* contact */
+#contact {
+  background-color: #ecccc8;
+}
+.contact__links {
+  margin: 10px;
+}
+.contact__links i {
+  font-size: 35px;
+  transition: all 300ms ease;
+  margin: 2px;
+}
+.contact__links i:hover {
+  transform: scale(1.1);
+}
+.contact__email {
+  margin: 5px 0;
 }
