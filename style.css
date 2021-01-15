@@ -85,6 +85,10 @@ button {
   background: transparent;
   cursor: pointer;
 }
+ul {
+  list-style: none;
+  padding-left: 0;
+}
 /* Navbar */
 #navbar {
   display: flex;
@@ -157,6 +161,7 @@ button {
 /* About */
 #about {
   margin: auto;
+  max-width: 1200px;
 }
 
 .about__major {
@@ -171,15 +176,15 @@ button {
   font-size: 70px;
   line-height: 170px;
   margin: auto;
-  color: rgb(118, 150, 134);
-  border: 1px solid rgb(106, 158, 106);
+  color: #f8c0af;
+  border: 1px solid #f8c0af;
   border-radius: 50%;
   margin-bottom: 16px;
 }
 
 .major__icon:hover i {
-  color: #5f706a;
-  transform: rotate(-2deg) scale(1.1);
+  color: #fae9b2;
+  transform: scale(1.1);
 }
 .major__icon i {
   transition: all 300ms ease;
@@ -196,4 +201,85 @@ button {
 .major__description {
   margin-top: 16px;
   font-size: var(--font-micro);
+}
+.about__jobs {
+  display: flex;
+  flex-direction: column;
+}
+.job {
+  background-color: rgba(209, 209, 209, 0.295);
+  padding: 20px;
+  margin-bottom: 18px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+}
+.job > img {
+  width: 55px;
+}
+
+/* Skills */
+#skills {
+  background-color: rgba(240, 230, 140, 0.363);
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.skillset {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--color-light-grey);
+}
+
+.skillset__left {
+  flex-basis: 60%;
+  background-color: var(--color-dark-grey);
+  padding: 20px 40px;
+}
+
+.skillset__right {
+  flex-basis: 40%;
+}
+
+.skill__description {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.skill__bar {
+  width: 100%;
+  margin: auto;
+  height: 3px;
+  background-color: grey;
+  margin-bottom: 20px;
+}
+.skill__value {
+  width: 80%;
+  height: 3px;
+  background-color: orange;
+}
+
+.tools {
+  background-color: grey;
+  padding: 10px 0;
+  margin: 0;
+}
+.etc {
+  padding: 10px 0;
+  margin: 0;
+}
+/* .tools,
+.etc {
+  padding: 10px;
+  color: whitesmoke;
+}
+
+.skillset__title,
+.skill__description {
+  color: white;
+} */
+
+.skillset {
+  color: whitesmoke;
 }
