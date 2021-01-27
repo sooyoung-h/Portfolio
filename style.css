@@ -91,11 +91,18 @@ ul {
 }
 /* Navbar */
 #navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #ecccc8;
+  background-color: transparent;
   padding: 0px;
+  transition: 300ms ease;
+}
+#navbar.navbar--dark {
+  background-color: rgb(248, 234, 237);
 }
 
 .navbar__logo {
