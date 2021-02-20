@@ -85,6 +85,28 @@ button {
   background: transparent;
   cursor: pointer;
 }
+.arrowBtn {
+  /* display: none; 이렇게 할 경우 transitrion속성이 사라짐*/
+  opacity: 0;
+  pointer-events: none;
+  /* opacity조정했으니까 안보여도 클릭하면 이벤트 발생 -> 윗줄은 그걸 방지하기 위함 */
+  transition: all 300ms ease;
+  font-family: "Josefin Sans", sans-serif;
+  position: fixed;
+  font-size: 40px;
+  top: 600px;
+  left: 30px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  color: rgb(85, 85, 85);
+  background-color: rgb(226, 196, 217);
+  border: 2px solid rgb(209, 209, 209);
+}
+.arrowBtn.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
 ul {
   list-style: none;
   padding-left: 0;

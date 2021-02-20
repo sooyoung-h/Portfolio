@@ -52,5 +52,21 @@ document.addEventListener("scroll", () => {
 
   if (window.scrollY > 0) {
     homeContainer.style.opacity = 1 - window.scrollY / homeContainer__Height;
+  } else if (window.scrollY == 0) {
+    homeContainer.style.opacity = 1;
   }
+});
+
+//4. Arrow Up BTN - class 사용, opacity(애니매이션 위해)
+const arrowBtn = document.querySelector(".arrowBtn");
+document.addEventListener("scroll", () => {
+  if (window.scrollY > 200) {
+    arrowBtn.classList.add("visible");
+  } else if (window.scrollY == 0) {
+    arrowBtn.classList.remove("visible");
+  }
+});
+
+arrowBtn.addEventListener("click", () => {
+  home.scrollIntoView({ bahavior: "smooth" });
 });
