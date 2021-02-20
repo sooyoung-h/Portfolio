@@ -153,13 +153,12 @@ ul {
   margin: 0 4px;
   cursor: pointer;
   border-radius: 4px;
-}
-
-.navbar__menu__item.active {
-  border: 1px solid rgba(189, 189, 189, 0.842);
+  border: 1px solid transparent;
+  /* hover할때만 border가 생기면 텍스트의 크기가 변해서 움직임 */
 }
 
 .navbar__menu__item:hover {
+  border-color: var(--color-dark-white);
   background-color: rgba(194, 194, 194, 0.226);
 }
 
@@ -350,7 +349,7 @@ ul {
   padding: 8px 48px;
 }
 
-.category__btn.active,
+.category__btn.selected,
 .category__btn:hover {
   background-color: rgb(191, 191, 219);
   color: white;
@@ -372,7 +371,7 @@ ul {
   transition: all 250ms ease;
 }
 
-.category__btn.active .category__count,
+.category__btn.selected.category__count,
 .category__btn:hover .category__count {
   opacity: 1;
   top: 0;
@@ -383,7 +382,7 @@ ul {
   flex-wrap: wrap;
   justify-content: center;
   opacity: 1;
-  transition: all 300ms ease-in;
+  transition: all 180ms ease-out;
 }
 .work__projects.anim-out {
   opacity: 0;

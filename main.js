@@ -79,13 +79,17 @@ const projects = document.querySelectorAll(".project");
 workBtnContainer.addEventListener("click", (event) => {
   const filter =
     event.target.dataset.filter || event.target.parentNode.dataset.filter;
-
   if (filter == null) {
     return;
   }
 
-  projectContainer.classList.add("anim-out");
+  const selected = document.querySelector(".category__btn.selected");
+  selected.classList.remove("selected"); //기존의 selected 클래스 찾아서 지우기
+  const target =
+    event.target.nodeName === "BUTTON" ? event.target : event.target.parentNode;
+  target.classList.add("selected"); //클릭된 애는 selected 클래스 더해주기
 
+  projectContainer.classList.add("anim-out");
   //0.3초 이후에 필터링 되어서 보여줌 (애니매이션 적용은 이미 된 상태->)
   //이렇게 분리하지 않으면 필터링 + anim-out클래스가 동시에 적용되어서 필터되면서 애니매이션이 적용되어서 어색함
   setTimeout(() => {
@@ -96,7 +100,8 @@ workBtnContainer.addEventListener("click", (event) => {
         project.classList.add("invisible");
       }
     });
-
     projectContainer.classList.remove("anim-out");
   }, 300);
 });
+
+//6. button state ACTIVE
