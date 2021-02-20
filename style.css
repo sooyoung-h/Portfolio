@@ -49,14 +49,14 @@ body {
 h1 {
   font-size: var(--font-large);
   font-weight: var(--weight-bold);
-  color: var(--color-black);
+  /* color: var(--color-black); */
   margin: 16px 0px;
 }
 
 h2 {
   font-size: var(--font-medium);
   font-weight: var(--weight-semi-bold);
-  color: var(--color-black);
+  /* color: var(--color-black); */
   margin: 8px 0;
 }
 
@@ -158,9 +158,12 @@ ul {
 #home {
   background: url("images/back.png") center/cover no-repeat;
   background-size: cover;
+  color: black;
   text-align: center;
   margin: 0;
+  transition: 300ms ease;
 }
+
 .home_avatar {
   width: 180px;
 
