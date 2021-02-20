@@ -73,7 +73,7 @@ arrowBtn.addEventListener("click", () => {
 
 //5. Project filtering & animation
 const workBtnContainer = document.querySelector(".work__categories");
-const projectBtnContainer = document.querySelector(".work__projects");
+const projectContainer = document.querySelector(".work__projects");
 const projects = document.querySelectorAll(".project");
 
 workBtnContainer.addEventListener("click", (event) => {
@@ -83,11 +83,20 @@ workBtnContainer.addEventListener("click", (event) => {
   if (filter == null) {
     return;
   }
-  projects.forEach((project) => {
-    if (filter === "*" || filter === project.dataset.type) {
-      project.classList.remove("invisible");
-    } else {
-      project.classList.add("invisible");
-    }
-  });
+
+  projectContainer.classList.add("anim-out");
+
+  //0.3초 이후에 필터링 되어서 보여줌 (애니매이션 적용은 이미 된 상태->)
+  //이렇게 분리하지 않으면 필터링 + anim-out클래스가 동시에 적용되어서 필터되면서 애니매이션이 적용되어서 어색함
+  setTimeout(() => {
+    projects.forEach((project) => {
+      if (filter === "*" || filter === project.dataset.type) {
+        project.classList.remove("invisible");
+      } else {
+        project.classList.add("invisible");
+      }
+    });
+
+    projectContainer.classList.remove("anim-out");
+  }, 300);
 });
