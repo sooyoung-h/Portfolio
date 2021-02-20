@@ -23,7 +23,20 @@ navbarMenu.addEventListener('click', (event)=>{
     if (link == null) {
         return;
     }
-    const scrollTo = document.querySelector(link);
-    //link는 #about이면 id가 about인 element를 찾음
-    scrollTo.scrollIntoView({behavior:"smooth"});
+    scrollIntoSelector(link);
 });
+
+const home = document.querySelector('#home');
+home.addEventListener('click', (e)=>{
+    const link = e.target.dataset.link;
+
+    if (link == null) {return;}
+    scrollIntoSelector(link);
+    
+})
+
+//반복되는 코드 함수화
+function scrollIntoSelector(selector) {
+    const scrollTo = document.querySelector(selector);
+    scrollTo.scrollIntoView({behavior: "smooth"});
+}
