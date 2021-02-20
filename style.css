@@ -100,6 +100,8 @@ ul {
   background-color: transparent;
   padding: 0px;
   transition: 300ms ease;
+  z-index: 1;
+  /* z-index는 px을 쓰면 안됨! */
 }
 #navbar.navbar--dark {
   background-color: rgb(248, 234, 237);
@@ -145,6 +147,11 @@ ul {
   right: 32px;
   font-size: 25px;
   display: none;
+}
+
+.black {
+  background-color: black;
+  color: black;
 }
 
 /* home */
