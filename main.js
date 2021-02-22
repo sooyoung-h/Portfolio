@@ -23,6 +23,7 @@ navbarMenu.addEventListener("click", (event) => {
   if (link == null) {
     return;
   }
+  navbarMenu.classList.remove("open");
   scrollIntoSelector(link);
 });
 
@@ -72,6 +73,7 @@ arrowBtn.addEventListener("click", () => {
 });
 
 //5. Project filtering & animation
+//6. active(selected) - 버튼 클릭됬을 때 그 버튼만 하이라이트
 const workBtnContainer = document.querySelector(".work__categories");
 const projectContainer = document.querySelector(".work__projects");
 const projects = document.querySelectorAll(".project");
@@ -104,4 +106,18 @@ workBtnContainer.addEventListener("click", (event) => {
   }, 300);
 });
 
-//6. button state ACTIVE
+//7. navbar__toogleBtn (작은 화면일 때) - toggle()
+const navbar__toogleBtn = document.querySelector(".navbar__toogleBtn");
+navbar__toogleBtn.addEventListener("click", () => {
+  navbarMenu.classList.toggle("open");
+  navbar.style.backgroundColor = "rgb(248, 234, 237)";
+  navbar.style.transition = "unset";
+});
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY == 0) {
+    navbar.style.backgroundColor = "transparent";
+  } else {
+    navbar.style.backgroundColor = "rgb(248, 234, 237)";
+  }
+});

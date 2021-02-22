@@ -494,6 +494,10 @@ ul {
     width: 100%;
     display: none;
   }
+  .navbar__menu.open {
+    display: block;
+    background-color: rgb(248, 234, 237);
+  }
   .about__major {
     flex-direction: column;
     margin: 40px 0;
