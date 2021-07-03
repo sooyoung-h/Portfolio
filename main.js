@@ -118,6 +118,6 @@ window.addEventListener("scroll", () => {
   if (window.scrollY == 0) {
     navbar.style.backgroundColor = "transparent";
   } else {
-    navbar.style.backgroundColor = "rgb(248, 234, 237)";
+    navbar.style.backgroundColor = "var(--color-covaltblue)";
   }
 });
